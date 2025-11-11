@@ -11,8 +11,8 @@ namespace Tyuiu.MarakovAD.Sprint4.Task3.V2.Lib
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < columns; j++)
                 {
-                    if (array[1, j] > max) { 
-                        max = array[1, j];
+                    if (array[0, j] > max) { 
+                        max = array[0, j];
                     }
                 }
             }
