@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Tyuiu.MarakovAD.Sprint4.Task5.V27.Lib;
+using Tyuiu.MarakovAD.Sprint4.Task7.V15.Lib;
 class Program
 {
     static void Main(string[] args)
@@ -14,32 +14,24 @@ class Program
         Console.WriteLine("* Выполнил: Мараков Андрей Дмитриевич | ИБКСб-25-1                        *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                *");
-        Console.WriteLine("* Дана строка из одноразрядных цифр "10293847. " +
+        Console.WriteLine("* Дана строка из одноразрядных цифр 10293847 " +
             "Преобразуйте ее в матрицу 4 на 2 и подсчитайте количество нечетных чисел в матрице.");
         Console.WriteLine("*                                                                         *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ                                                         *");
         Console.WriteLine("***************************************************************************");
-        Random rnd = new Random();
-        Console.WriteLine("Введите количество строк в массиве: ");
-        int rows = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Введите количество столбцов в массиве: ");
-        int columns = Convert.ToInt32(Console.ReadLine());
+        int rows = 4;
+        int columns = 2;
         int[,] ms = new int[rows, columns];
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < columns; j++)
-            {
-                ms[i, j] = rnd.Next(-5,8);
-            }
-            Console.WriteLine();
-        }
+        string str = "10293847";
+        int index = 0;
         Console.WriteLine("Массив: ");
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
             {
-                Console.Write($"{ms[i, j]} \t");
+                Console.Write($"{str[index]} \t");
+                index++;
             }
             Console.WriteLine();
         }
@@ -48,7 +40,7 @@ class Program
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
-        int sum = ds.Calculate(ms);
+        int sum = ds.Calculate(rows, columns, str);
         Console.WriteLine(sum);
         Console.ReadKey();
     }
